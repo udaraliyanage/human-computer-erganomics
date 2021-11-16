@@ -36,3 +36,44 @@
 .capturedImageDiv{
     min-height: 720px;
 }
+.camSettingWrapper label{
+    padding-left: 10px;
+    font-size: 18px;
+    position: relative;
+    bottom: 2px;
+    font-weight: 500;
+    color: #000000;
+}
+.camSettingWrapper input{
+    width: 18px;
+    height: 18px;
+}
+.camSettingWrapper div{
+    padding-bottom: 10px;
+}
+.resetTuneDiv{
+    width: 300px;
+    margin-top: 20px;
+}
+.screenSettingsWrapper{
+    padding-top: 20px;
+}
+.screenSettingLabel{
+    width: 210px;
+    font-size: 18px;
+    color: #000000;
+}
+.screenSettingValue{
+    font-size: 18px;
+    color: #000000;
+    font-weight: 700;
+}
+.screenSettingsDiv{
+    display: inline-flex;
+}
+.form-range{
+    width: 300% !important;
+}
+.captureBtnDiv div{
+    margin-bottom: 20px;
+}

@@ -18,8 +18,7 @@
     display: block;
     padding: 2em;
     min-width: 20em;
-    max-width: 70%;
-    color: #f00;
+    max-width: 100%;
     background-color: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%);
