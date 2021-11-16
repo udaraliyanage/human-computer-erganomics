@@ -75,7 +75,7 @@ export function HomePage() {
             </div>
           )}
           <div className="captureBtnDiv">
-            <Button btnText={capturedImage ? "SUBMIT" : "CAPTURE"} solid={true} onClick={capturedImage ? capture : submitCapturedImage} />
+            <Button btnText={capturedImage ? "SUBMIT" : "CAPTURE"} solid={true} onClick={capturedImage ? submitCapturedImage : capture} />
           </div>
         </LightBox>
       )}
