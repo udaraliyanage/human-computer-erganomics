@@ -16,6 +16,7 @@ export function HomePage() {
   const webcamRef = React.useRef(null);
   const [showLightBox, setShowLightbox] = React.useState(false);
   const [capturedImage, setCapturedImage] = React.useState("");
+  const [analysedResponse, setAnalysedResponse] = React.useState(undefined)
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
     setCapturedImage(imageSrc);
@@ -28,8 +29,10 @@ export function HomePage() {
     setCapturedImage("");
   };
   const submitCapturedImage = async () => {
+    console.log("###", capturedImage)
     const response = await axios.post('http://localhost:8080/api/ergonomics/index', capturedImage);
-    console.log("adheesh",response );
+    setAnalysedResponse(response.data)
+    console.log("adheesh", analysedResponse);
   }
 
   return (
@@ -49,7 +52,7 @@ export function HomePage() {
       </div>
       {showLightBox && (
         <LightBox width="1280px" onClickClose={setshowLightboxWebcam}>
-          {!capturedImage && (
+          {(!capturedImage && analysedResponse == undefined) && (
             <Webcam
               audio={false}
               height={720}
@@ -59,7 +62,7 @@ export function HomePage() {
               videoConstraints={videoConstraints}
             />
           )}
-          {capturedImage && (
+          {capturedImage && analysedResponse == undefined && (
             <div>
               <div className="capturedImageDiv">
                 <img src={capturedImage} alt="asd" className="capturedImage" />{" "}
@@ -74,12 +77,15 @@ export function HomePage() {
               </div>
             </div>
           )}
-          <div className="captureBtnDiv">
+          {analysedResponse == undefined && <div className="captureBtnDiv">
             <Button btnText={capturedImage ? "SUBMIT" : "CAPTURE"} solid={true} onClick={capturedImage ? submitCapturedImage : capture} />
-          </div>
+          </div>}
+          {analysedResponse && <div className="resultDiv">
+            {analysedResponse.score + analysedResponse.message}
+          </div>}
         </LightBox>
       )}
-      <div></div>
+
     </div>
   );
 }
