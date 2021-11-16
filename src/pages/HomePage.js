@@ -4,6 +4,7 @@ import { Button } from "../components/Button";
 import Webcam from "react-webcam";
 import React from "react";
 import { LightBox } from "../components/LightBox";
+import axios from "axios";
 
 export function HomePage() {
   const videoConstraints = {
@@ -26,6 +27,10 @@ export function HomePage() {
   const recapture = () => {
     setCapturedImage("");
   };
+  const submitCapturedImage = async () => {
+    const response = await axios.post('http://localhost:8080/api/ergonomics/index', capturedImage);
+    console.log("adheesh",response );
+  }
 
   return (
     <div>
@@ -70,7 +75,7 @@ export function HomePage() {
             </div>
           )}
           <div className="captureBtnDiv">
-            <Button btnText={capturedImage ? "SUBMIT" : "CAPTURE"} solid={true} onClick={capture} />
+            <Button btnText={capturedImage ? "SUBMIT" : "CAPTURE"} solid={true} onClick={capturedImage ? capture : submitCapturedImage} />
           </div>
         </LightBox>
       )}
