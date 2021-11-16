@@ -1,0 +1,42 @@
+.btnComponent{
+    height: 47px;
+    border: 1px solid #0672cb;
+    background-color: #ffffff;
+    color: #0672cb;
+    padding: 10px 40px;
+    width: auto;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    /* float: left; */
+}
+.btnComponent:hover{
+    background: #f1f6fc;
+    color: #0672cb;
+}
+.btnSolidBackground{
+    background-color: #0672cb;
+    color: #ffffff;
+    padding: 10px 40px;
+    width: auto;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    height: 47px;
+    border: 1px solid #0672cb;
+}
+.btnSolidBackground:hover{
+    background: #ffffff;
+    color: #0672cb;
+}
+.transparentBtn{
+height: 47px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff36;
+    color: #ffff;
+    padding: 10px 40px;
+    width: auto;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}

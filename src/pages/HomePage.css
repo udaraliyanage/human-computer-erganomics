@@ -1,0 +1,38 @@
+.bannerCaption{
+    position: absolute;
+    top: 30%;
+    width: 500px !important;
+    left: 10%;
+    background-color: rgb(6 114 203 / 82%);
+    padding: 25px !important;
+    border-radius: 5px;
+}
+.captionHeading{
+    font-size: 54px;
+    line-height: 64px;
+    color: #ffffff;
+    font-weight: 700;
+}
+.captionDescription{
+    color: #ffffff;
+    padding-top: 15px;
+    font-weight: 700;
+    line-height: 35px;
+}
+.webCamBtn{
+    margin-top: 20px;
+    width: 290px;
+}
+.captureBtnDiv{
+    width: 300px;
+    margin: auto;
+}
+.retakeButtonDiv{
+    width: 300px;
+    position: absolute;
+    top: 70%;
+    left: 37%;
+}
+.capturedImageDiv{
+    min-height: 720px;
+}

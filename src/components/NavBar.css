@@ -1,0 +1,9 @@
+.navBarCustom{
+    justify-content: end;
+}
+.nav-item a{
+ color: #000000 !important;
+}
+.navBarCustom{
+    padding: 15px 10px;
+}
