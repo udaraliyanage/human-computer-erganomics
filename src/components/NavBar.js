@@ -1,32 +1,98 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./NavBar.css";
+import assets from "../common/assets";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
-    return (
+  return (
+    <div className="navRow">
         <div className="container">
-            <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
-                <a class="navbar-brand" href="#">Dell</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+      <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
+        <a class="navbar-brand navBarBrand" href="#">
+          <div className="dellSmallLogo">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              focusable="false"
+            >
+              <path
+                d="M20 0C16.0444 0 12.1776 1.17298 8.88861 3.37061C5.59962 5.56824 3.03617 8.69181 1.52242 12.3463C0.00866568 16.0009 -0.387401 20.0222 0.384303 23.9018C1.15601 27.7814 3.06082 31.3451 5.85787 34.1421C8.65492 36.9392 12.2186 38.844 16.0982 39.6157C19.9778 40.3874 23.9992 39.9913 27.6537 38.4776C31.3082 36.9638 34.4318 34.4004 36.6294 31.1114C38.827 27.8224 40 23.9556 40 20C39.9693 14.7051 37.8523 9.63589 34.1082 5.89179C30.3641 2.1477 25.2949 0.0307062 20 0ZM20 37.962C16.4475 37.962 12.9747 36.9085 10.0209 34.9349C7.06702 32.9612 4.76479 30.1559 3.40528 26.8738C2.04578 23.5916 1.69008 19.9801 2.38314 16.4958C3.07621 13.0115 4.78693 9.81098 7.29896 7.29895C9.81099 4.78692 13.0115 3.0762 16.4958 2.38313C19.9801 1.69007 23.5916 2.04577 26.8738 3.40528C30.1559 4.76478 32.9612 7.06701 34.9349 10.0208C36.9086 12.9747 37.962 16.4475 37.962 20C37.9648 22.3596 37.5021 24.6965 36.6004 26.877C35.6987 29.0575 34.3757 31.0387 32.7072 32.7072C31.0387 34.3757 29.0575 35.6987 26.877 36.6004C24.6965 37.502 22.3596 37.9648 20 37.962ZM35.541 22.675V24.458H29.936V15.668H31.974V22.674L35.541 22.675ZM9.42701 24.331C10.4004 24.343 11.3484 24.0207 12.1128 23.4179C12.8772 22.8151 13.4117 21.9684 13.627 21.019L18.6 24.841L23.568 21.019V24.331H29.173V22.548H25.478V15.541H23.439V18.853L18.726 22.675L17.707 21.783L20 20L22.42 18.089L21.02 16.943L16.307 20.637L15.288 19.745L20 16.178L18.6 15.032L13.632 18.854C13.3992 17.9139 12.8601 17.078 12.0996 16.4783C11.339 15.8786 10.4005 15.5492 9.43201 15.542H5.86001V24.332H9.42701V24.331ZM7.77101 22.675V17.325H9.30001C9.97421 17.3628 10.6063 17.6648 11.0594 18.1655C11.5124 18.6663 11.7498 19.3254 11.72 20C11.7508 20.6749 11.5138 21.3346 11.0606 21.8356C10.6073 22.3366 9.97458 22.6383 9.30001 22.675H7.77101Z"
+                fill="#1885C3"
+              ></path>
+            </svg>
+          </div>
+          <div className="dellTechLogoDiv">
+            <img
+              src={assets.dellTechnoLogies}
+              className="dellTechLogo"
+              alt="asd"
+            />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse navBarCustom" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Our Vision</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign In</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <div
+          class="collapse navbar-collapse navBarCustom"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <Link class="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Who are we
+              </a>
+            </li>
+            <li class="nav-item">
+              {/* <Link to="/oursolution">asd</Link> */}
+              <Link class="nav-link" to="oursolution">
+                Our Solution
+              </Link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span className="userSvg">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    focusable="false"
+                  >
+                    <path
+                      d="M16 16H0L0.11 15.46C0.11 15.25 0.63 11.06 3.79 8.91L4.11 8.7L4.42 8.91C5.40427 9.78123 6.6689 10.2696 7.98327 10.2862C9.29763 10.3027 10.5741 9.84621 11.58 9L11.89 8.79L12.21 9C15.47 11.15 15.89 15.34 15.89 15.55L16 16ZM1.16 14.93H14.74C14.3722 13.0127 13.368 11.2756 11.89 10C10.7434 10.8333 9.36242 11.2822 7.945 11.2822C6.52758 11.2822 5.14657 10.8333 4 10C2.56367 11.308 1.57093 13.0313 1.16 14.93Z"
+                      fill="#707070"
+                    ></path>
+                    <path
+                      d="M8 0C7.10801 0 6.23604 0.264507 5.49438 0.760072C4.75271 1.25564 4.17465 1.96 3.8333 2.7841C3.49195 3.60819 3.40264 4.515 3.57666 5.38986C3.75068 6.26471 4.18021 7.06832 4.81095 7.69905C5.44168 8.32979 6.24529 8.75932 7.12014 8.93334C7.995 9.10736 8.90181 9.01805 9.7259 8.6767C10.55 8.33535 11.2544 7.75729 11.7499 7.01562C12.2455 6.27396 12.51 5.40199 12.51 4.51C12.51 3.31387 12.0348 2.16674 11.1891 1.32095C10.3433 0.475159 9.19613 0 8 0ZM8 7.94C7.31878 7.94198 6.65232 7.74165 6.08508 7.36442C5.51785 6.98719 5.07539 6.45004 4.81378 5.82106C4.55218 5.19207 4.48321 4.49958 4.61563 3.83135C4.74804 3.16313 5.07587 2.54926 5.55757 2.06757C6.03926 1.58587 6.65313 1.25804 7.32135 1.12563C7.98958 0.993213 8.68207 1.06218 9.31106 1.32378C9.94004 1.58539 10.4772 2.02785 10.8544 2.59508C11.2317 3.16232 11.432 3.82878 11.43 4.51C11.4274 5.41888 11.0651 6.28978 10.4225 6.93246C9.77978 7.57514 8.90888 7.93736 8 7.94Z"
+                      fill="#707070"
+                    ></path>
+                  </svg>
+                </span>
+                Sign In
+              </a>
+            </li>
+          </ul>
         </div>
-    );
+      </nav>
+    </div>
+    </div>
+  );
 }

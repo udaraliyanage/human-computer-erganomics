@@ -1,0 +1,22 @@
+.footerBottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    color: white;
+    text-align: center;
+    height: 60px;
+    padding: 20px;
+ }
+ .footerUl{
+     list-style: none;
+ }
+ .footerUl li{
+    float: left;
+    color: #000000;
+    padding-right: 15px;
+    width: 12%;
+    font-weight: 500;
+    font-size: 15px;
+ }

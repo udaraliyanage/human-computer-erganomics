@@ -3,7 +3,35 @@
 }
 .nav-item a{
  color: #000000 !important;
+ font-weight: 500;
 }
 .navBarCustom{
     padding: 15px 10px;
+}
+.navBarBrand{
+    display: inline-flex;
+}
+.dellTechLogo{
+    height: 40px;
+}
+.dellTechLogoDiv{
+    position: relative;
+    top: 4px;
+}
+.dellSmallLogo{
+    padding-right: 20px;
+}
+.dellTechLogoDiv{
+    position: relative;
+    top: 4px;
+    padding-left: 20px;
+    border-left: 1px solid #808080;
+}
+.userSvg{
+    position: relative;
+    bottom: 3px;
+    margin-right: 5px;
+}
+.navRow{
+    background-color: #f7f7f7;
 }
