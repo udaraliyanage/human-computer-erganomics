@@ -30,15 +30,13 @@ export function OurSolution() {
   };
   const submitCapturedImage = async () => {
     console.log("###", capturedImage);
-    const response = await axios.get(
+    const response = await axios.post(
       "http://localhost:8080/api/ergonomics/index",
       {
-        params: {
-          image: capturedImage,
-        },
+        image: capturedImage,
       }
     );
-    console.log("###Response###");
+    console.log("###Response###", response);
     setAnalysedResponse(response.data);
   };
 
