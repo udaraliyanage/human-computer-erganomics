@@ -256,7 +256,7 @@ export function OurSolution() {
                             Ergonomic Distance Score
                           </div>
                           <div className="screenSettingValue blueFont">
-                            0.62m
+                            {analysedResponse.ErgonomicsIndex}
                           </div>
                         </div>
                       </div>
