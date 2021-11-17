@@ -30,13 +30,15 @@ export function OurSolution() {
   };
   const submitCapturedImage = async () => {
     console.log("###", capturedImage);
-    const response = await axios.post(
+    const response = await axios.get(
       "http://localhost:8080/api/ergonomics/index",
       {
-        image:capturedImage
+        params: {
+          image: capturedImage,
+        },
       }
     );
-    console.log("###Response###")
+    console.log("###Response###");
     setAnalysedResponse(response.data);
   };
 
@@ -197,7 +199,7 @@ export function OurSolution() {
                       onClick={submitCapturedImage}
                     />
 
-                    <Button btnText={"Stop Webcam"} onClick={recapture}/>
+                    <Button btnText={"Stop Webcam"} onClick={recapture} />
                   </div>
                 </div>
               )}
