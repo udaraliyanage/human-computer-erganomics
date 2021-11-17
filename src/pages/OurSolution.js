@@ -105,7 +105,7 @@ export function OurSolution() {
                   <div className="screenSizeInputFieldWrap">
                     <div className="screenSettingLabel">Screen Size</div>
                     <div className="screenSettingInput">
-                      <TextField name="screenSize" placeholder="Test Udara" onChange={screenSettingOnchangeHandler}/>
+                      <TextField name="screenSize" placeholder="13" onChange={screenSettingOnchangeHandler}/>
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export function OurSolution() {
                   <div className="screenSizeInputFieldWrap">
                     <div className="screenSettingLabel">Screen Width</div>
                     <div className="screenSettingInput">
-                      <TextField name="screenWidth" onChange={screenSettingOnchangeHandler}/>
+                      <TextField name="screenWidth"  placeholder="11.3"   onChange={screenSettingOnchangeHandler}/>
                     </div>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export function OurSolution() {
                   <div className="screenSizeInputFieldWrap">
                     <div className="screenSettingLabel">Screen Height</div>
                     <div className="screenSettingInput">
-                      <TextField name="screenHeight" onChange={screenSettingOnchangeHandler}/>
+                      <TextField name="screenHeight"  placeholder="6.4" onChange={screenSettingOnchangeHandler}/>
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ export function OurSolution() {
                   <div className="screenSizeInputFieldWrap">
                     <div className="screenSettingLabel">Aspect Ratio</div>
                     <div className="screenSettingInput">
-                      <TextField name="screenApRatio"  onChange={screenSettingOnchangeHandler}/>
+                      <TextField name="screenApRatio"  placeholder="1.78:1" onChange={screenSettingOnchangeHandler}/>
                     </div>
                   </div>
                 </div>
@@ -142,10 +142,8 @@ export function OurSolution() {
                     <div className="screenSettingLabel">Display Resolution</div>
                     <div className="screenSettingInput">
                       <select className="resSelectDrop" name="disRes" id="cars" onChange={screenSettingOnchangeHandler} >
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
+                        <option value="1920*1080">1920*1080</option>
+                        <option value="1920*1020">1920*1020</option>
                       </select>
                     </div>
                   </div>
