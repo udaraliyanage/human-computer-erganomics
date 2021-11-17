@@ -32,10 +32,12 @@ export function OurSolution() {
     console.log("###", capturedImage);
     const response = await axios.post(
       "http://localhost:8080/api/ergonomics/index",
-      capturedImage
+      {
+        image:capturedImage
+      }
     );
+    console.log("###Response###")
     setAnalysedResponse(response.data);
-    console.log("adheesh", analysedResponse);
   };
 
   return (
@@ -157,42 +159,50 @@ export function OurSolution() {
             </div>
             <div className="col-md-6">
               {!capturedImage && analysedResponse == undefined && (
-                <Webcam
-                  audio={false}
-                  ref={webcamRef}
-                  screenshotFormat="image/jpeg"
-                  screenshotQuality={1}
-                  // videoConstraints={videoConstraints}
-                />
-              )}
-              {analysedResponse == undefined && (
-                <div className="captureBtnDiv">
-                  <Button
-                    btnText={capturedImage ? "SUBMIT" : "Analyze the Posture"}
-                    solid={true}
-                    onClick={capturedImage ? submitCapturedImage : capture}
+                <div>
+                  <Webcam
+                    audio={false}
+                    ref={webcamRef}
+                    screenshotFormat="image/jpeg"
+                    screenshotQuality={1}
+                    // videoConstraints={videoConstraints}
                   />
 
-                  <Button btnText={"Stop Webcam"} />
+                  <div className="captureBtnDiv">
+                    <Button
+                      btnText={"Capture"}
+                      solid={true}
+                      onClick={capture}
+                    />
+
+                    <Button btnText={"Stop Webcam"} />
+                  </div>
+                </div>
+              )}
+
+              {capturedImage && analysedResponse == undefined && (
+                <div>
+                  <div className="capturedImageDiv">
+                    <img
+                      src={capturedImage}
+                      alt="asd"
+                      className="capturedImage"
+                    />
+                  </div>
+
+                  <div className="captureBtnDiv">
+                    <Button
+                      btnText={"Analyse the Posture"}
+                      solid={true}
+                      onClick={submitCapturedImage}
+                    />
+
+                    <Button btnText={"Stop Webcam"} onClick={recapture}/>
+                  </div>
                 </div>
               )}
             </div>
           </div>
-
-          {/* {capturedImage && analysedResponse == undefined && 
-            <div>
-              <div className="capturedImageDiv">
-                <img src={capturedImage} alt="asd" className="capturedImage" />{" "}
-              </div>
-
-              <div className="retakeButtonDiv">
-                <Button
-                  btnText={"RECAPTURE"}
-                  tranparent={true}
-                  onClick={recapture}
-                />
-              </div>
-        </div> } */}
 
           {/* {analysedResponse && <div className="resultDiv">
             {analysedResponse.score + analysedResponse.message}
