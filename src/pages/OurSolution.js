@@ -60,101 +60,217 @@ export function OurSolution() {
           <div className="row">
             <div className="col-md-6">
               <div className="camSettingWrapper">
-                <form>
+                {!capturedImage && analysedResponse == undefined && (
                   <div>
-                    <input
-                      type="checkbox"
-                      id="settings1"
-                      name="settings1"
-                      value="Bike"
-                    />
-                    <label for="settings1">Screen Setting</label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="settings2"
-                      name="settings2"
-                      value="Bike"
-                    />
-                    <label for="settings2">Camera Turned On</label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="settings3"
-                      name="settings3"
-                      value="Bike"
-                    />
-                    <label for="settings3">Human Position Detected</label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="settings4"
-                      name="settings4"
-                      value="Bike"
-                    />
-                    <label for="settings4">Lightning Checking</label>
-                  </div>
-                  <div className="resetTuneDiv">
-                    <Button btnText={"Reset Tuning"} />
-                  </div>
-                </form>
-
-                <div className="screenSettingsWrapper">
-                  <div>
-                    <div className="screenSettingsDiv">
-                      <div className="screenSettingLabel">Screen Diagnol</div>
-                      <div className="screenSettingValue">13 inc</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="screenSettingsDiv">
-                      <div className="screenSettingLabel">
-                        Display Resolution
-                      </div>
-                      <div className="screenSettingValue">
-                        1920 * 1080(Full HD)
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="screenSettingsDiv">
-                      <div className="screenSettingLabel">Screen Width</div>
-                      <div className="screenSettingValue">11.3" (28.8 cm)</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="screenSettingsDiv">
-                      <div className="screenSettingLabel">Screen Height</div>
-                      <div className="screenSettingValue">6.4" (16.2 cm)</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="screenSettingsDiv">
-                      <div className="screenSettingLabel">Aspect Ratio</div>
-                      <div className="screenSettingValue">1.78:1 (16:9)</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="screenSettingsDiv">
-                      <div className="screenSettingLabel">Brightness</div>
-                      <div className="screenSettingValue">
+                    <form>
+                      <div>
                         <input
-                          type="range"
-                          class="form-range"
-                          id="customRange1"
+                          type="checkbox"
+                          id="settings1"
+                          name="settings1"
+                          value="Bike"
                         />
+                        <label for="settings1">Screen Setting</label>
+                      </div>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="settings2"
+                          name="settings2"
+                          value="Bike"
+                        />
+                        <label for="settings2">Camera Turned On</label>
+                      </div>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="settings3"
+                          name="settings3"
+                          value="Bike"
+                        />
+                        <label for="settings3">Human Position Detected</label>
+                      </div>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="settings4"
+                          name="settings4"
+                          value="Bike"
+                        />
+                        <label for="settings4">Lightning Checking</label>
+                      </div>
+                      <div className="resetTuneDiv">
+                        <Button btnText={"Reset Tuning"} />
+                      </div>
+                    </form>
+
+                    <div className="screenSettingsWrapper">
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabel">
+                            Screen Diagnol
+                          </div>
+                          <div className="screenSettingValue">13 inc</div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabel">
+                            Display Resolution
+                          </div>
+                          <div className="screenSettingValue">
+                            1920 * 1080(Full HD)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabel">Screen Width</div>
+                          <div className="screenSettingValue">
+                            11.3" (28.8 cm)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabel">
+                            Screen Height
+                          </div>
+                          <div className="screenSettingValue">
+                            6.4" (16.2 cm)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabel">Aspect Ratio</div>
+                          <div className="screenSettingValue">
+                            1.78:1 (16:9)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabel">Brightness</div>
+                          <div className="screenSettingValue">
+                            <input
+                              type="range"
+                              class="form-range"
+                              id="customRange1"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
+                {capturedImage && (
+                  <div>
+                    <div>
+                      <div className="screenSettingsDiv">
+                        <div className="screenSettingLabel">Screen Diagnol</div>
+                        <div className="screenSettingValue">1.78:1 (16:9)</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="screenSettingsDiv">
+                        <div className="screenSettingLabel">
+                          Display Resolution
+                        </div>
+                        <div className="screenSettingValue">
+                          1920 * 1080 (Full HD)
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="resultsDiv">
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabelResults boldFont">
+                            <span>
+                              <img
+                                src={assets.warningRed}
+                                className="expressionIcon"
+                                alt="asd"
+                              />
+                            </span>
+                            Minimum Distance
+                          </div>
+                          <div className="screenSettingValue redFont">
+                            0.21m
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabelResults boldFont">
+                            <span>
+                              <img
+                                src={assets.warningYello}
+                                className="expressionIcon"
+                                alt="asd"
+                              />
+                            </span>
+                            Maximum Distance
+                          </div>
+                          <div className="screenSettingLabelResults yellowFont">
+                            0.55m
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabelResults boldFont">
+                            <span>
+                              <img
+                                src={assets.tick}
+                                className="expressionIcon"
+                                alt="asd"
+                              />
+                            </span>
+                            Visual Acuity distance
+                          </div>
+                          <div className="screenSettingValue greenFont">
+                            0.52m
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="screenSettingsDiv">
+                          <div className="screenSettingLabelResults boldFont blueFont">
+                            <span>
+                              <img
+                                src={assets.info}
+                                className="expressionIcon"
+                                alt="asd"
+                              />
+                            </span>
+                            Ergonomic Distance Score
+                          </div>
+                          <div className="screenSettingValue blueFont">
+                            0.62m
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+
+                    <div className="finaleResultsDiv">
+                        Result: <span className="resultsSpan">Acceptable</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="col-md-6">

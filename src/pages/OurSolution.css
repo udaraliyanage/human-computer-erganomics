@@ -78,3 +78,42 @@
 .captureBtnDiv div{
     margin-bottom: 20px;
 }
+.resultsDiv{
+    padding: 15px;
+    border: 2px solid #0672cb;
+    margin-top: 15px;
+}
+.expressionIcon{
+    position: relative;
+    bottom: 2px;
+    padding-right: 10px;
+}
+.redFont{
+    color: red !important;
+}
+.yellowFont{
+    color: #ecd000 !important;
+}
+.greenFont{
+    color: #00c403 !important;
+}
+.boldFont{
+    font-weight: 600 !important;
+}
+.screenSettingLabelResults {
+    width: 270px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.blueFont{
+    color: #05a0eb !important;
+}
+.finaleResultsDiv{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.resultsSpan{
+    color: #ecd000 !important;
+}
