@@ -17,21 +17,12 @@ export function OurSolution() {
   const webcamRef = React.useRef(null);
   const [showLightBox, setShowLightbox] = React.useState(false);
   const [capturedImage, setCapturedImage] = React.useState("");
-  const [analysedResponse, setAnalysedResponse] = React.useState(undefined);
+  const [analysedResponse, setAnalysedResponse] = React.useState(null);
   const [goNext, setGoNext] = React.useState(false);
   const [screenSettings, setScreenSetting] = React.useState({});
-  const capture = React.useCallback(() => {
+  const capture = React.useCallback(async () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setCapturedImage(imageSrc);
-  }, [webcamRef]);
-
-  const setshowLightboxWebcam = () => {
-    setShowLightbox(!showLightBox);
-  };
-  const recapture = () => {
-    setCapturedImage("");
-  };
-  const submitCapturedImage = async () => {
     console.log("###", capturedImage);
     const response = await axios.post(
       "http://localhost:8080/api/ergonomics/index",
@@ -41,7 +32,17 @@ export function OurSolution() {
     );
     console.log("###Response###", response);
     setAnalysedResponse(response.data);
+  }, [webcamRef]);
+
+  const setshowLightboxWebcam = () => {
+    setShowLightbox(!showLightBox);
   };
+  const recapture = () => {
+    setCapturedImage("");
+  };
+  // const submitCapturedImage = async () => {
+    
+  // };
 
   const screenSettingOnchangeHandler = (event) => {
     // console.log("adheesh", event.target.value)
@@ -170,7 +171,7 @@ export function OurSolution() {
             </div>
           )}
 
-          {goNext && !analysedResponse && (
+          {goNext && (
             <div className="row">
               <div className="col-md-6">
                 <div className="camSettingWrapper">
@@ -328,7 +329,7 @@ export function OurSolution() {
                               Minimum Distance
                             </div>
                             <div className="screenSettingValue redFont">
-                              {analysedResponse?.Details?.MinDistance || 12} 
+                              {analysedResponse?.Details?.MinDistance} 
                             </div>
                           </div>
                         </div>
@@ -346,7 +347,7 @@ export function OurSolution() {
                               Maximum Distance
                             </div>
                             <div className="screenSettingLabelResults yellowFont">
-                              {analysedResponse?.Details?.MaxDistance || 12}
+                              {analysedResponse?.Details?.MaxDistance}
                             </div>
                           </div>
                         </div>
@@ -364,7 +365,7 @@ export function OurSolution() {
                               Visual Acuity distance
                             </div>
                             <div className="screenSettingValue greenFont">
-                              {analysedResponse?.Details?.VisualAcuityDistance || 12}
+                              {analysedResponse?.Details?.VisualAcuityDistance}
                             </div>
                           </div>
                         </div>
@@ -382,7 +383,7 @@ export function OurSolution() {
                               Ergonomic Distance Score
                             </div>
                             <div className="screenSettingValue blueFont">
-                              {analysedResponse?.ErgonomicsIndex || 12}
+                              {analysedResponse?.ErgonomicsIndex}
                             </div>
                           </div>
                         </div>
@@ -408,7 +409,7 @@ export function OurSolution() {
 
                     <div className="captureBtnDiv">
                       <Button
-                        btnText={"Capture"}
+                        btnText={"Analyse the Posture"}
                         solid={true}
                         onClick={capture}
                       />
@@ -418,7 +419,7 @@ export function OurSolution() {
                   </div>
                 )}
 
-                {capturedImage && analysedResponse == undefined && (
+                {capturedImage  && (
                   <div>
                     <div className="capturedImageDiv">
                       <img
@@ -432,7 +433,7 @@ export function OurSolution() {
                       <Button
                         btnText={"Analyse the Posture"}
                         solid={true}
-                        onClick={submitCapturedImage}
+                       
                       />
 
                     </div>
@@ -444,7 +445,7 @@ export function OurSolution() {
           {/* <div className="scoreSummeryWrapper">
                 <div className="scoreSumInnerWrap">
                   <div className="capturedUserImageSm">
-                  <img src={assets.closeIcon} className="capturedSmallImageUSer" alt="asd"/>
+                  <img src={assets.capturedImage} className="capturedSmallImageUSer" alt="asd"/>
                   </div>
                 </div>
           </div> */}

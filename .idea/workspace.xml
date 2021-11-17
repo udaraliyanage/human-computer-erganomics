@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d332294-5340-45e9-9fb0-c96f3ec1f5e0" name="Changes" comment="" />
+    <list default="true" id="8d332294-5340-45e9-9fb0-c96f3ec1f5e0" name="Changes" comment="Add intial data for screen details">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +35,34 @@
       <option name="presentableId" value="Default" />
       <updated>1637049149703</updated>
       <workItem from="1637049151778" duration="1615000" />
+      <workItem from="1637119265213" duration="3280000" />
     </task>
+    <task id="LOCAL-00001" summary="Add intial data for screen details">
+      <created>1637131084620</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637131084620</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add intial data for screen details" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add intial data for screen details" />
   </component>
 </project>
