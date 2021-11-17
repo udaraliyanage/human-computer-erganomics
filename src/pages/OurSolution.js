@@ -169,7 +169,7 @@ export function OurSolution() {
                     </div>
                   </div>
                 )}
-                {capturedImage && (
+                {analysedResponse && (
                   <div>
                     <div>
                       <div className="screenSettingsDiv">
@@ -202,7 +202,7 @@ export function OurSolution() {
                             Minimum Distance
                           </div>
                           <div className="screenSettingValue redFont">
-                            0.21m
+                            {analysedResponse.Details.MinDistance}
                           </div>
                         </div>
                       </div>
@@ -220,11 +220,10 @@ export function OurSolution() {
                             Maximum Distance
                           </div>
                           <div className="screenSettingLabelResults yellowFont">
-                            0.55m
+                            {analysedResponse.Details.MaxDistance}
                           </div>
                         </div>
                       </div>
-
 
                       <div>
                         <div className="screenSettingsDiv">
@@ -239,7 +238,7 @@ export function OurSolution() {
                             Visual Acuity distance
                           </div>
                           <div className="screenSettingValue greenFont">
-                            0.52m
+                            {analysedResponse.Details.VisualAcuityDistance}
                           </div>
                         </div>
                       </div>
@@ -261,13 +260,10 @@ export function OurSolution() {
                           </div>
                         </div>
                       </div>
-
-
                     </div>
 
-
                     <div className="finaleResultsDiv">
-                        Result: <span className="resultsSpan">Acceptable</span>
+                      Result: <span className="resultsSpan">Acceptable</span>
                     </div>
                   </div>
                 )}
