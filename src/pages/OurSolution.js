@@ -84,6 +84,7 @@ export function OurSolution() {
                     name="settings1"
                     value="Bike"
                     className="checkBoxInput"
+                    checked
                   />
                   <label for="settings1">Screen Setting</label>
                 </div>
@@ -95,6 +96,7 @@ export function OurSolution() {
                     name="settings1"
                     value="Bike"
                     className="checkBoxInput"
+                    checked
                   />
                   <label for="settings1">Under Warranty</label>
                 </div>
@@ -167,7 +169,8 @@ export function OurSolution() {
               </div>
             </div>
           )}
-          {goNext && (
+
+          {goNext && !analysedResponse && (
             <div className="row">
               <div className="col-md-6">
                 <div className="camSettingWrapper">
@@ -180,6 +183,7 @@ export function OurSolution() {
                             id="settings1"
                             name="settings1"
                             value="Bike"
+                            checked
                           />
                           <label for="settings1">Screen Setting</label>
                         </div>
@@ -189,6 +193,7 @@ export function OurSolution() {
                             id="settings2"
                             name="settings2"
                             value="Bike"
+                            checked
                           />
                           <label for="settings2">Camera Turned On</label>
                         </div>
@@ -198,6 +203,7 @@ export function OurSolution() {
                             id="settings3"
                             name="settings3"
                             value="Bike"
+                            checked
                           />
                           <label for="settings3">Human Position Detected</label>
                         </div>
@@ -207,6 +213,7 @@ export function OurSolution() {
                             id="settings4"
                             name="settings4"
                             value="Bike"
+                            checked
                           />
                           <label for="settings4">Lightning Checking</label>
                         </div>
@@ -292,7 +299,7 @@ export function OurSolution() {
                             Screen Diagnol
                           </div>
                           <div className="screenSettingValue">
-                            1.78:1 (16:9)
+                            {screenSettings.screenSize}
                           </div>
                         </div>
                       </div>
@@ -321,7 +328,7 @@ export function OurSolution() {
                               Minimum Distance
                             </div>
                             <div className="screenSettingValue redFont">
-                              {analysedResponse.Details.MinDistance}
+                              {analysedResponse?.Details?.MinDistance || 12} 
                             </div>
                           </div>
                         </div>
@@ -339,7 +346,7 @@ export function OurSolution() {
                               Maximum Distance
                             </div>
                             <div className="screenSettingLabelResults yellowFont">
-                              {analysedResponse.Details.MaxDistance}
+                              {analysedResponse?.Details?.MaxDistance || 12}
                             </div>
                           </div>
                         </div>
@@ -357,7 +364,7 @@ export function OurSolution() {
                               Visual Acuity distance
                             </div>
                             <div className="screenSettingValue greenFont">
-                              {analysedResponse.Details.VisualAcuityDistance}
+                              {analysedResponse?.Details?.VisualAcuityDistance || 12}
                             </div>
                           </div>
                         </div>
@@ -375,7 +382,7 @@ export function OurSolution() {
                               Ergonomic Distance Score
                             </div>
                             <div className="screenSettingValue blueFont">
-                              {analysedResponse.ErgonomicsIndex}
+                              {analysedResponse?.ErgonomicsIndex || 12}
                             </div>
                           </div>
                         </div>
@@ -406,7 +413,7 @@ export function OurSolution() {
                         onClick={capture}
                       />
 
-                      <Button btnText={"Stop Webcam"} />
+                     
                     </div>
                   </div>
                 )}
@@ -428,14 +435,19 @@ export function OurSolution() {
                         onClick={submitCapturedImage}
                       />
 
-                      <Button btnText={"Stop Webcam"} onClick={recapture} />
                     </div>
                   </div>
                 )}
               </div>
             </div>
           )}
-
+          {/* <div className="scoreSummeryWrapper">
+                <div className="scoreSumInnerWrap">
+                  <div className="capturedUserImageSm">
+                  <img src={assets.closeIcon} className="capturedSmallImageUSer" alt="asd"/>
+                  </div>
+                </div>
+          </div> */}
           {/* {analysedResponse && <div className="resultDiv">
             {analysedResponse.score + analysedResponse.message}
           </div>}  */}
