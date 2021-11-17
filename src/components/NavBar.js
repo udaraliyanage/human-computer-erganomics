@@ -8,7 +8,7 @@ export function NavBar() {
     <div className="navRow">
         <div className="container">
       <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
-        <a class="navbar-brand navBarBrand" href="#">
+        <Link class="navbar-brand navBarBrand" to="/">
           <div className="dellSmallLogo">
             <svg
               width="40"
@@ -31,7 +31,7 @@ export function NavBar() {
               alt="asd"
             />
           </div>
-        </a>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -66,7 +66,7 @@ export function NavBar() {
               </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="sign-in">
                 <span className="userSvg">
                   <svg
                     width="16"
@@ -87,7 +87,7 @@ export function NavBar() {
                   </svg>
                 </span>
                 Sign In
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

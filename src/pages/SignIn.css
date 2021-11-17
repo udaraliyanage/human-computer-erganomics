@@ -1,0 +1,68 @@
+.homeBannerCaption{
+    position: absolute;
+    width: 7500px;
+    top: 25%;
+    left: 11.5%;
+}
+.inspiron{
+    color: #000000;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+.stylishMod{
+    padding-top: 30px;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+.integratingFont{
+    font-style: italic;
+    padding-top: 15px;
+    font-weight: 500;
+    color: #000000;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+.getTheBest{
+    padding-top: 20px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+.toDetailedAnalysisReport{
+    width: 400px;
+    margin: auto;
+}
+.labelSignIn{
+    color: #ffffff;
+    font-weight: 600;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+.signinInputWrapper{
+    margin-bottom: 30px;
+}
+.signInBtn{
+width: 200px;
+}
+.bannerCaptionSignIn{
+    position: absolute;
+    top: 30%;
+    width: 500px!important;
+    left: 10%;
+    background-color: rgb(6 114 203 / 82%);
+    padding: 35px!important;
+    border-radius: 5px;
+}
+.continueAsGuest{
+    padding-top: 15px;
+}
+.continueAsGuest a{
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 16px;
+}

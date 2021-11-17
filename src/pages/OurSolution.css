@@ -15,7 +15,6 @@
 }
 .captionDescription{
     color: #ffffff;
-    padding-top: 15px;
     font-weight: 700;
     line-height: 35px;
 }
@@ -26,6 +25,7 @@
 .captureBtnDiv{
     width: 300px;
     margin: auto;
+    padding-top: 30px;
 }
 .retakeButtonDiv{
     width: 300px;

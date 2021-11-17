@@ -60,13 +60,13 @@ export function OurSolution() {
       <div className="row">
         <img src={assets.bannerImage} alt="asd" className="bannerImage" />
         <div className="bannerCaption">
-          <div className="captionHeading">Human Computer Ergonomics</div>
+          <div className="captionHeading">The Best Made Better</div>
           <p className="captionDescription">
-            Innovating how we work. <br />
-            Analyse Your Posture By Clicking Below Button
+            Innovating how we work.
           </p>
+          <p className="captionDescription">Analyse Your Sitting Posture and Make Ergonomics a Reality For Everyone</p>
           <div className="webCamBtn">
-            <Button btnText={"OPEN WEBCAM"} onClick={setshowLightboxWebcam} />
+            <Button btnText={"START"} onClick={setshowLightboxWebcam} />
           </div>
         </div>
       </div>
@@ -245,7 +245,7 @@ export function OurSolution() {
                               Display Resolution
                             </div>
                             <div className="screenSettingValue">
-                              1920 * 1080(Full HD)
+                              {screenSettings.disRes}
                             </div>
                           </div>
                         </div>
@@ -415,7 +415,7 @@ export function OurSolution() {
 
                     <div className="captureBtnDiv">
                       <Button
-                        btnText={"Analyse the Posture"}
+                        btnText={"Analyse Posture"}
                         solid={true}
                         onClick={capture}
                       />
@@ -437,7 +437,7 @@ export function OurSolution() {
 
                     <div className="captureBtnDiv">
                       <Button
-                        btnText={"Analyse the Posture"}
+                        btnText={"Analyse Posture"}
                         solid={true}
                        
                       />
