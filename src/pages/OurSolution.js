@@ -20,6 +20,7 @@ export function OurSolution() {
   const [analysedResponse, setAnalysedResponse] = React.useState(null);
   const [goNext, setGoNext] = React.useState(false);
   const [screenSettings, setScreenSetting] = React.useState({});
+  const [hideCameraRow, setHideCameraRow] = React.useState(false);
   const capture = React.useCallback(async () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setCapturedImage(imageSrc);
@@ -30,6 +31,9 @@ export function OurSolution() {
         image: capturedImage,
       }
     );
+    if(response){
+      setHideCameraRow(true);
+    }
     console.log("###Response###", response);
     setAnalysedResponse(response.data);
   }, [webcamRef]);
@@ -66,9 +70,11 @@ export function OurSolution() {
           </div>
         </div>
       </div>
+      {console.log("adheesh hideCameraRow", hideCameraRow, goNext)}
       {showLightBox && (
+        
         <LightBox
-          width={goNext ? "82%" : "65"}
+          width={goNext && hideCameraRow ==false ? "82%" : "55%"}
           onClickClose={setshowLightboxWebcam}
         >
           {!goNext && (
@@ -171,7 +177,7 @@ export function OurSolution() {
             </div>
           )}
 
-          {goNext && (
+          {goNext && !hideCameraRow && (
             <div className="row">
               <div className="col-md-6">
                 <div className="camSettingWrapper">
@@ -442,16 +448,32 @@ export function OurSolution() {
               </div>
             </div>
           )}
-          {/* <div className="scoreSummeryWrapper">
+          {hideCameraRow && <div className="scoreSummeryWrapper">
                 <div className="scoreSumInnerWrap">
                   <div className="capturedUserImageSm">
-                  <img src={assets.capturedImage} className="capturedSmallImageUSer" alt="asd"/>
+                  <img src={capturedImage} className="capturedSmallImageUSer" alt="asd"/>
+                  </div>
+                  <div className="ergoScoreSumDiv">
+                    <div className="sumErgoScoreTitle">
+                      Your Ergonomic Distance Score:
+                    </div>
+                    <div className="sumErgoScore">
+                      9.3
+                    </div>
+                    <div className="sumErgoScoreTitle">
+                      Ergonomic Assessment Outcome:
+                    </div>
+                    <div className="sumErgoScore">
+                      Good
+                    </div>
+                    <p className="scoreSumMessage">You are doing great<br /> Keep it up!</p>
+                    <p className="scoreSumMessage">Check the detailed analysis report</p>
+                    <div className="toDetailedAnalysisReport">
+                      <Button btnText="Detailed Analysis Result" onClick={()=>setHideCameraRow(false)}/>
+                    </div>
                   </div>
                 </div>
-          </div> */}
-          {/* {analysedResponse && <div className="resultDiv">
-            {analysedResponse.score + analysedResponse.message}
-          </div>}  */}
+          </div> }
         </LightBox>
       )}
     </div>

@@ -157,3 +157,31 @@
     margin: auto;
     padding-top: 18px;
 }
+video{
+    width: 100% !important;
+}
+.capturedUserImageSm{
+    width: 50%; 
+    margin: auto;
+}
+.capturedSmallImageUSer{
+    width: 100%;
+}
+.ergoScoreSumDiv{
+    text-align: center;
+    margin-top: 45px;
+}
+.sumErgoScoreTitle{
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+.sumErgoScore{
+    color: #00c403;
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+.scoreSumMessage{
+    font-weight: 600;
+}
