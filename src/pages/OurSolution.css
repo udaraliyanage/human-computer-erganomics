@@ -117,3 +117,43 @@
 .resultsSpan{
     color: #ecd000 !important;
 }
+.laptopModel{
+    font-weight: 600;
+    font-size: 22px;
+    text-decoration: underline;
+    line-height: 15px;
+}
+.checkBoxInput{
+    height: 18px;
+    width: 18px;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+.laptopSettingsWrapper{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.laptopSettingsOuter{
+    margin-bottom: 20px;
+}
+.screenSizeInputFieldWrap{
+    display: inline-flex;
+    margin-bottom: 25px;
+}
+.settingsInputWrapper{
+    margin-top: 50px;
+}
+.resSelectDrop{
+    width: 200px;
+    height: 40px;
+}
+.firstRange{
+    width: 300px !important;
+}
+.nextBtnDiv{
+    width: 300px;
+    margin: auto;
+    padding-top: 18px;
+}
